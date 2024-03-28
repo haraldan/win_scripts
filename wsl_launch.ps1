@@ -10,5 +10,5 @@ $filename = ($filename_win.replace('\','/') -replace('C:/','/mnt/c/'))
 $dir_name = Split-Path($filename)
 $dir_name = $dir_name.replace('\','/')
 
-wsl --cd $dir_name nvim +$linenumber $filename
+wsl --cd $dir_name nvr +$linenumber $filename
 #Write-Host wsl --cd $dir_name nvim +$linenumber $filename
