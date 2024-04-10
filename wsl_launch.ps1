@@ -5,7 +5,7 @@ if ($args[1] -eq $null){
 	$linenumber=$args[1]
 }
 
-$filename = ($filename_win.replace('\','/') -replace('C:/','/mnt/c/'))
+$filename = (($filename_win.replace('\','/') -replace('C:/','/mnt/c/')) -replace ('//wsl.localhost/Ubuntu/','/'))
 
 $dir_name = Split-Path($filename)
 $dir_name = $dir_name.replace('\','/')
