@@ -5,7 +5,7 @@
 SetWorkingDir "C:\Users\649dsinev"
 
 ;open Alacritty in WSL
-^!t::
+^<!t::
 {
     Run "alacritty.exe" ,,, &PID
 	WinWait 'ahk_pid ' PID
@@ -13,7 +13,7 @@ SetWorkingDir "C:\Users\649dsinev"
     WinActivate 'ahk_pid ' PID
 }
 
-^!w::
+^<!w::
 {
     Run "alacritty.exe -e wsl ~ tmux new -A -s default" ,,, &PID
 	WinWait 'ahk_pid ' PID
@@ -21,7 +21,7 @@ SetWorkingDir "C:\Users\649dsinev"
     WinActivate 'ahk_pid ' PID
 }
 
-^!s::
+^<!s::
 {
     Run "alacritty.exe -e wsl ~ ssh ds@10.149.108.25 -t 'tmux new -A -s default'" ,,, &PID
 	WinWait 'ahk_pid ' PID
