@@ -9,7 +9,7 @@ SetWorkingDir "C:\Users\649dsinev"
 {
     Run "alacritty.exe" ,,, &PID
 	WinWait 'ahk_pid ' PID
-	sleep 100
+	sleep 200
     WinActivate 'ahk_pid ' PID
 }
 
@@ -17,6 +17,14 @@ SetWorkingDir "C:\Users\649dsinev"
 {
     Run "alacritty.exe -e wsl ~ tmux new -A -s default" ,,, &PID
 	WinWait 'ahk_pid ' PID
-	sleep 100
+	sleep 200
+    WinActivate 'ahk_pid ' PID
+}
+
+^!s::
+{
+    Run "alacritty.exe -e wsl ~ ssh ds@10.149.108.25 -t 'tmux new -A -s default'" ,,, &PID
+	WinWait 'ahk_pid ' PID
+	sleep 200
     WinActivate 'ahk_pid ' PID
 }
