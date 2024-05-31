@@ -23,7 +23,7 @@ SetWorkingDir "C:\Users\649dsinev"
 
 ^<!s::
 {
-    Run "alacritty.exe -e wsl ~ ssh ds@10.149.108.25 -t 'tmux new -A -s Firmware'" ,,, &PID
+    Run "alacritty.exe -e powershell.exe ssh ds@10.149.108.25 -t 'tmux new -A -s Firmware'" ,,, &PID
 	WinWait 'ahk_pid ' PID
 	sleep 200
     WinActivate 'ahk_pid ' PID
