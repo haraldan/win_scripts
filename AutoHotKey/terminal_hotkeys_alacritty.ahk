@@ -28,3 +28,16 @@ SetWorkingDir "C:\Users\649dsinev"
 	sleep 200
     WinActivate 'ahk_pid ' PID
 }
+
+
+#HotIf WinActive("alacritty")
+
++Ins::
++RButton::
+{
+    A_Clipboard := StrReplace(A_Clipboard, "`r`n", "`n")
+    Send("^+v")
+}
+return
+
+#HotIf
