@@ -1,5 +1,5 @@
 ﻿#Requires AutoHotkey v2.0+
-TraySetIcon "icons/caps.ico",1,true
+TraySetIcon "icons/caps_white.ico",1,true
 
 LShift & RShift:: CapsLock
 RShift & LShift:: CapsLock

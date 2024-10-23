@@ -4,7 +4,7 @@ SendMode Input  ; Recommended for new scripts due to its superior speed and reli
 SetWorkingDir %A_ScriptDir%  ; Ensures a consistent starting directory.
 
 ;#NoTrayIcon
-Menu, Tray, Icon, icons/mouse.ico
+Menu, Tray, Icon, icons/mouse_white.ico
 #Persistent
 
 MButton:: ; send active window to back

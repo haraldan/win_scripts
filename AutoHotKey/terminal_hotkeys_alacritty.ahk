@@ -1,6 +1,6 @@
 #Requires AutoHotkey v2.0+
 #SingleInstance
-#NoTrayIcon
+TraySetIcon "icons/terminal_white.ico",1,true
 
 SetWorkingDir "C:\Users\649dsinev"
 
