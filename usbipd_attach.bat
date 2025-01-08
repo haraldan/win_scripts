@@ -1,0 +1,1 @@
+start alacritty.exe -e usbipd attach --wsl --busid 7-4
