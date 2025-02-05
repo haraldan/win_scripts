@@ -1,0 +1,1 @@
+echo afvamp %1 > COM4
