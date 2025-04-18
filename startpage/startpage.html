@@ -83,28 +83,28 @@
 
     <!-- Row 1 -->
     <div class="row">
-      <a href="https://mail.google.com" target="_self">
+      <a href="https://mail.google.com" target="_self" data-key="1">
         <div class="tile">
           <img src="images/gmail.png" alt="Gmail">
           <span>Gmail</span>
         </div>
       </a>
 
-      <a href="https://calendar.google.com" target="_self">
+      <a href="https://calendar.google.com" target="_self" data-key="2">
         <div class="tile">
           <img src="images/calendar.png" alt="Calendar">
           <span>Calendar</span>
         </div>
       </a>
 
-      <a href="https://www.deepl.com/translator" target="_self">
+      <a href="https://www.deepl.com/translator" target="_self" data-key="3">
         <div class="tile">
           <img src="images/deepl.png" alt="DeepL">
           <span>DeepL</span>
         </div>
       </a>
 
-      <a href="https://web.telegram.org" target="_self">
+      <a href="https://web.telegram.org" target="_self" data-key="4">
         <div class="tile">
           <img src="images/telegram.png" alt="Telegram">
           <span>Telegram</span>
@@ -114,28 +114,28 @@
 
     <!-- Row 2 -->
     <div class="row">
-      <a href="http://192.168.178.11" target="_self">
+      <a href="http://192.168.178.11" target="_self" data-key="5">
         <div class="tile">
           <img src="images/celsius.png" alt="Celsius">
           <span>Celsius</span>
         </div>
       </a>
 
-      <a href="http://192.168.178.11:8080" target="_self">
+      <a href="http://192.168.178.11:8080" target="_self" data-key="6">
         <div class="tile">
           <img src="images/qbittorrent.svg" alt="qBittorrent">
           <span>qBittorrent</span>
         </div>
       </a>
 
-      <a href="http://192.168.178.11:2342" target="_self">
+      <a href="http://192.168.178.11:2342" target="_self" data-key="7">
         <div class="tile">
           <img src="images/photoprism.png" alt="Photoprism">
           <span>Photoprism</span>
         </div>
       </a>
 
-      <a href="http://192.168.178.11:5001" target="_self">
+      <a href="http://192.168.178.11:5001" target="_self" data-key="8">
         <div class="tile">
           <img src="images/dockge.png" alt="Dockge">
           <span>Dockge</span>
@@ -144,5 +144,17 @@
     </div>
 
   </div>
+<script>
+  document.addEventListener('keydown', (event) => {
+    if (event.altKey || event.ctrlKey || event.metaKey) return;
+
+    const key = event.key;
+    const link = document.querySelector(`a[data-key="${key}"]`);
+    if (link) {
+      window.location.href = link.href;
+    }
+  });
+</script>
+
 </body>
 </html>
