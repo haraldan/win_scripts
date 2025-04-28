@@ -1,18 +1,64 @@
 -- Pull in the wezterm API
-local wezterm = require 'wezterm'
+local wezterm = require("wezterm")
 
 -- This will hold the configuration.
 local config = wezterm.config_builder()
 
 local mux = wezterm.mux
 
-wezterm.on('gui-startup', function(cmd)
-  local tab, pane, window = mux.spawn_window(cmd or {})
-  window:gui_window():maximize()
+-- start maximized
+wezterm.on("gui-startup", function(cmd)
+	local tab, pane, window = mux.spawn_window(cmd or {})
+	window:gui_window():maximize()
 end)
 
---config.color_scheme = 'AdventureTime'
-config.hide_tab_bar_if_only_one_tab = true
+-- Font
+config.font = wezterm.font("CaskaydiaMono Nerd Font")
+-- Window decorations
+config.window_decorations = "INTEGRATED_BUTTONS|RESIZE"
+config.window_frame = { active_titlebar_bg = "#000000", button_bg = "000000" }
+config.colors = {
+	tab_bar = {
+		new_tab = {
+			bg_color = "#222222",
+			fg_color = "white",
+		},
+	},
+}
+config.window_padding = {
+	left = 2,
+	right = 2,
+	top = 0,
+	bottom = 0,
+}
 
--- and finally, return the configuration to wezterm
+-- Key mappings
+config.keys = {
+	{
+		key = "r",
+		mods = "ALT|SHIFT",
+		action = wezterm.action.ReloadConfiguration,
+	},
+	{
+		key = "t",
+		mods = "ALT|SHIFT",
+		action = wezterm.action.SpawnTab("CurrentPaneDomain"),
+	},
+	{
+		key = "x",
+		mods = "ALT|SHIFT",
+		action = wezterm.action.CloseCurrentTab({ confirm = true }),
+	},
+	{
+		key = "n",
+		mods = "ALT|SHIFT",
+		action = wezterm.action.ActivateTabRelative(1),
+	},
+	{
+		key = "p",
+		mods = "ALT|SHIFT",
+		action = wezterm.action.ActivateTabRelative(-1),
+	},
+}
+
 return config
