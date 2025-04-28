@@ -61,4 +61,17 @@ config.keys = {
 	},
 }
 
+config.mouse_bindings = {
+	{
+		event = { Down = { streak = 1, button = "Right" } },
+		mods = "NONE",
+		action = wezterm.action.PasteFrom("PrimarySelection"),
+	},
+	{
+		event = { Down = { streak = 1, button = "Right" } },
+		mods = "SHIFT",
+		action = wezterm.action.PasteFrom("PrimarySelection"),
+	},
+}
+
 return config
