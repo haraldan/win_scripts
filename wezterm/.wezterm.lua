@@ -14,7 +14,8 @@ end)
 
 -- Font
 config.font = wezterm.font("CaskaydiaMono Nerd Font")
--- Window decorations
+
+-- Window settings
 config.window_decorations = "INTEGRATED_BUTTONS|RESIZE"
 config.window_frame = { active_titlebar_bg = "#000000", button_bg = "000000" }
 config.colors = {
@@ -31,6 +32,7 @@ config.window_padding = {
 	top = 0,
 	bottom = 0,
 }
+config.window_close_confirmation = 'NeverPrompt'
 
 -- Key mappings
 config.keys = {
