@@ -1,1 +1,1 @@
-start alacritty.exe -e usbipd attach --wsl --busid 7-4
+usbipd attach --wsl --hardware-id 0403:6015 -a
