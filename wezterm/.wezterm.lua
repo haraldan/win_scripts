@@ -38,27 +38,27 @@ config.window_close_confirmation = 'NeverPrompt'
 config.keys = {
 	{
 		key = "r",
-		mods = "ALT|SHIFT",
+		mods = "CTRL|ALT",
 		action = wezterm.action.ReloadConfiguration,
 	},
 	{
 		key = "t",
-		mods = "ALT|SHIFT",
+		mods = "CTRL|ALT|SHIFT",
 		action = wezterm.action.SpawnTab("CurrentPaneDomain"),
 	},
 	{
 		key = "x",
-		mods = "ALT|SHIFT",
+		mods = "CTRL|ALT",
 		action = wezterm.action.CloseCurrentTab({ confirm = true }),
 	},
 	{
 		key = "n",
-		mods = "ALT|SHIFT",
+		mods = "CTRL|ALT",
 		action = wezterm.action.ActivateTabRelative(1),
 	},
 	{
 		key = "p",
-		mods = "ALT|SHIFT",
+		mods = "CTRL|ALT",
 		action = wezterm.action.ActivateTabRelative(-1),
 	},
 }
