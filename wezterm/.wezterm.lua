@@ -12,6 +12,9 @@ wezterm.on("gui-startup", function(cmd)
 	window:gui_window():maximize()
 end)
 
+-- Powershell by default
+config.default_prog = { 'powershell.exe' }
+
 -- Font
 config.font = wezterm.font("CaskaydiaMono Nerd Font")
 
