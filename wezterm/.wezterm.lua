@@ -14,6 +14,7 @@ end)
 
 -- Powershell by default
 config.default_prog = { 'powershell.exe' }
+config.mux_enable_ssh_agent = false
 
 -- Font
 config.font = wezterm.font("CaskaydiaMono Nerd Font")
