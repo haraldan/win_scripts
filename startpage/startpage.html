@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -19,6 +18,8 @@
       align-items: center;
       justify-content: center;
       height: 100vh;
+      color: #000;
+      transition: background 0.3s, color 0.3s;
     }
 
     .container {
@@ -41,12 +42,11 @@
       border-radius: 10px;
       flex: 1;
       aspect-ratio: 3 / 2;
-      /* Fix the aspect ratio */
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: space-between;
-      transition: transform 0.2s ease, background 0.3s;
+      transition: transform 0.2s ease, background 0.3s, box-shadow 0.3s;
       box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
       cursor: pointer;
       text-align: center;
@@ -64,11 +64,8 @@
     .tile img {
       flex-grow: 1;
       max-height: 100%;
-      /* Ensure image does not stretch vertically */
       max-width: 100%;
-      /* Prevent image from growing too wide */
       object-fit: contain;
-      /* Prevent stretching or cropping */
     }
 
     .tile span {
@@ -81,13 +78,32 @@
       text-decoration: none;
       flex: 1;
     }
+
+    /* Dark mode */
+    @media (prefers-color-scheme: dark) {
+      body {
+        background: #121212;
+        color: #f5f5f5;
+      }
+
+      .tile {
+        background: #1e1e1e;
+        box-shadow: 0 6px 16px rgba(0, 0, 0, 0.5);
+      }
+
+      .tile:hover {
+        background: #2a2a2a;
+      }
+
+      .tile span {
+        color: #ddd;
+      }
+    }
   </style>
 </head>
 
 <body>
   <div class="container">
-
-    <!-- Row 1 -->
     <div class="row">
       <a href="https://mail.google.com" target="_self" data-key="1">
         <div class="tile">
@@ -95,21 +111,18 @@
           <span>Gmail</span>
         </div>
       </a>
-
       <a href="https://calendar.google.com" target="_self" data-key="2">
         <div class="tile">
           <img src="images/calendar.png" alt="Calendar">
           <span>Calendar</span>
         </div>
       </a>
-
       <a href="https://www.deepl.com/translator" target="_self" data-key="3">
         <div class="tile">
           <img src="images/deepl.png" alt="DeepL">
           <span>DeepL</span>
         </div>
       </a>
-
       <a href="https://web.telegram.org" target="_self" data-key="4">
         <div class="tile">
           <img src="images/telegram.png" alt="Telegram">
@@ -118,7 +131,6 @@
       </a>
     </div>
 
-    <!-- Row 2 -->
     <div class="row">
       <a href="http://192.168.178.11" target="_self" data-key="5">
         <div class="tile">
@@ -126,21 +138,18 @@
           <span>Celsius</span>
         </div>
       </a>
-
       <a href="http://192.168.178.11:8080" target="_self" data-key="6">
         <div class="tile">
           <img src="images/qbittorrent.svg" alt="qBittorrent">
           <span>qBittorrent</span>
         </div>
       </a>
-
       <a href="http://192.168.178.11:2342" target="_self" data-key="7">
         <div class="tile">
           <img src="images/photoprism.png" alt="Photoprism">
           <span>Photoprism</span>
         </div>
       </a>
-
       <a href="http://192.168.178.11:5001" target="_self" data-key="8">
         <div class="tile">
           <img src="images/dockge.png" alt="Dockge">
@@ -148,20 +157,15 @@
         </div>
       </a>
     </div>
-
   </div>
+
   <script>
     document.addEventListener('keydown', (event) => {
       if (event.altKey || event.ctrlKey || event.metaKey) return;
-
       const key = event.key;
       const link = document.querySelector(`a[data-key="${key}"]`);
-      if (link) {
-        window.location.href = link.href;
-      }
+      if (link) window.location.href = link.href;
     });
   </script>
-
 </body>
-
 </html>
