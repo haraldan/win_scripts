@@ -30,6 +30,9 @@ config.colors = {
 		},
 	},
 }
+
+config.force_reverse_video_cursor = true
+
 config.window_padding = {
 	left = 2,
 	right = 2,
