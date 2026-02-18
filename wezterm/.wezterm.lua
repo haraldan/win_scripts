@@ -13,7 +13,7 @@ wezterm.on("gui-startup", function(cmd)
 end)
 
 -- Powershell by default
-config.default_prog = { 'powershell.exe' }
+config.default_prog = { "powershell.exe" }
 config.mux_enable_ssh_agent = false
 
 -- Font
@@ -39,7 +39,7 @@ config.window_padding = {
 	top = 0,
 	bottom = 0,
 }
-config.window_close_confirmation = 'NeverPrompt'
+config.window_close_confirmation = "NeverPrompt"
 
 -- Key mappings
 config.keys = {
@@ -67,6 +67,21 @@ config.keys = {
 		key = "p",
 		mods = "ALT|SHIFT",
 		action = wezterm.action.ActivateTabRelative(-1),
+	},
+	{
+		key = "F",
+		mods = "CTRL|SHIFT",
+		action = wezterm.action.Search({ CaseInSensitiveString = "" }),
+	},
+	{
+		key = "PageUp",
+		mods = "NONE",
+		action = wezterm.action.ScrollByPage(-1),
+	},
+	{
+		key = "PageDown",
+		mods = "NONE",
+		action = wezterm.action.ScrollByPage(1),
 	},
 }
 
