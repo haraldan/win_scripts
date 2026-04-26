@@ -4,7 +4,6 @@ TraySetIcon "icons/terminal_white.ico",1,true
 
 SetWorkingDir "C:\Users\daniel"
 
-;open Wezterm in WSL
 ^<!t::
 {
     Run "wezterm-gui.exe" ,,, &PID
@@ -16,6 +15,14 @@ SetWorkingDir "C:\Users\daniel"
 ^<!w::
 {
     Run "wezterm-gui.exe -e wsl ~ tmux new -A -s default" ,,, &PID
+	WinWait 'ahk_pid ' PID
+	sleep 200
+    WinActivate 'ahk_pid ' PID
+}
+
+^<!s::
+{
+    Run "wezterm-gui.exe -e powershell.exe ssh -Y daniel@192.168.178.16 -t 'tmux new -A -s default'" ,,, &PID
 	WinWait 'ahk_pid ' PID
 	sleep 200
     WinActivate 'ahk_pid ' PID
