@@ -19,6 +19,9 @@ config.mux_enable_ssh_agent = false
 -- Font
 config.font = wezterm.font("CaskaydiaMono Nerd Font")
 
+-- Disable bell
+config.audible_bell = "Disabled"
+
 -- Window settings
 config.window_decorations = "INTEGRATED_BUTTONS|RESIZE"
 config.window_frame = { active_titlebar_bg = "#000000", button_bg = "000000" }
