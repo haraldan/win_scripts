@@ -29,4 +29,3 @@ if /i "!CURRENT!"=="%CHROME%" (
 del "%TEMP%\sfta_out.txt" >nul 2>&1
 echo.
 echo Done.
-pause
